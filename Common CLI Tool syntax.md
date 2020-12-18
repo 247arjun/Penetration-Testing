@@ -1,21 +1,14 @@
 # Common Command Line tools usage
 
-## NMAP
-
-
-
-## SSH
+## Hydra
+### SSH
 ```bash
-# ssh root@192.168.99.22
+# hydra -L /usr/share/ncrack/minimal.usr -P /usr/share/seclists/Passwords/rockyou.txt 192.168.99.22 ssh
 ```
 
-## SCP
+### Telnet
 ```bash
-# scp root@192.168.99.22:/etc/shadow .
-````
-## Telnet
-```bash
-# telnet 192.168.99.22 -l root
+# hydra -L /usr/share/ncrack/minimal.usr -P /usr/share/seclists/Passwords/rockyou.txt telnet://192.168.99.22
 ```
 ## John
 ### Unshadow
@@ -27,13 +20,22 @@
 ```bash
 # john crackme
 ```
-## Hydra
-### SSH
+
+## NMAP
+
+## SCP
 ```bash
-# hydra -L /usr/share/ncrack/minimal.usr -P /usr/share/seclists/Passwords/rockyou.txt 192.168.99.22 ssh
+# scp root@192.168.99.22:/etc/shadow .
+````
+
+## SSH
+```bash
+# ssh root@192.168.99.22
 ```
 
-### Telnet
+## Telnet
 ```bash
-# hydra -L /usr/share/ncrack/minimal.usr -P /usr/share/seclists/Passwords/rockyou.txt telnet://192.168.99.22
+# telnet 192.168.99.22 -l root
 ```
+
+
